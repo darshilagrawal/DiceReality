@@ -15,7 +15,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Set the view's delegate
         sceneView.delegate = self
 //        let cube=SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0.01)
@@ -37,12 +36,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         diceNode.position=SCNVector3(0.1, 0.1, -0.2)
             sceneView.scene.rootNode.addChildNode(diceNode)
         }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
@@ -52,16 +49,13 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
         // Pause the view's session
         sceneView.session.pause()
     }
 
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         if anchor is ARPlaneAnchor{
-            let planeAnchor = anchor as! ARPlaneAnchor
-            
-            
+            let planeAnchor = anchor as! ARPlaneAnchor    
         }
     }
 }
